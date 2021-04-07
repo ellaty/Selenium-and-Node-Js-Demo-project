@@ -12,8 +12,9 @@ const csvWriter = createCsvWriter({
   header: [
     {id: 'number', title: 'number'},
     {id: 'name_of_web', title: 'name_of_web'},
-    {id: 'browserName', tittle:'browserName'},
-    {id:'os', tittle:'os'},
+    {id: 'browserName', title:'browserName'},
+    {id:'os', title:'os'},
+    {id:'language', title:'language'},
   ]
 });
 
@@ -39,6 +40,11 @@ async function answer (){
       let os = await capability.getPlatform().toString();
       console.log(os);
 
+      //get the language
+      //get the language of a web page
+      let language = await driver.findElement(By.tagName("html")).getAttribute("lang");
+      console.log(language);
+
 
       console.log(address);
       // writting my findings on an object that I will later put in my file.
@@ -47,6 +53,7 @@ async function answer (){
         name_of_web: websites[web],
         browserName: browserName,
         os:os,
+        language:language,
       }
       data.push(record);
     }

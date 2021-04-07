@@ -5,3 +5,5 @@ For some files you need to download the Selenium WebDriver dirvers for different
 see link "https://www.selenium.dev/documentation/en/getting_started_with_webdriver/third_party_drivers_and_plugins/"
 
 the example in index.js uses firefox
+
+The actual file that has the prototype is first_prototype.js , and to run it you can simply do "node first_prototype.js"
