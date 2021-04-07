@@ -22,10 +22,11 @@ var web;
 const data = [];
 async function answer (){
   let driver = await new Builder().forBrowser('firefox').build();
+  try{
   for (web in websites){
     let address = websites[web];
 
-    try{
+
 
       // Apply timeout for 5 seconds
       await driver.manage().setTimeouts( { implicit: 5000 } );
@@ -49,10 +50,11 @@ async function answer (){
       }
       data.push(record);
     }
+  }
     finally{
           driver.quit();
       }
-  }
+
 
 }
 
