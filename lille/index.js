@@ -13,7 +13,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
         let  capability = await driver.getCapabilities();
         let browserName = await cap.getBrowserName().toLowerCase();
         console.log(browserName);
-        let os = await cap.getPlatform().toString();
+        let os = await capability.getPlatform().toString();
         console.log(os);
 
         //hitting the second api and getting the title of the page
