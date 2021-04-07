@@ -35,7 +35,7 @@ async function answer (){
       let  capability = await driver.getCapabilities();
       let browserName = await capability.getBrowserName().toLowerCase();
       console.log(browserName);
-      let os = await cap.getPlatform().toString();
+      let os = await capability.getPlatform().toString();
       console.log(os);
 
 

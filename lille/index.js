@@ -11,7 +11,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
         await driver.get('https://www.google.com');
         // finding out which browser and which operating system the user is using.
         let  capability = await driver.getCapabilities();
-        let browserName = await cap.getBrowserName().toLowerCase();
+        let browserName = await capability.getBrowserName().toLowerCase();
         console.log(browserName);
         let os = await capability.getPlatform().toString();
         console.log(os);
