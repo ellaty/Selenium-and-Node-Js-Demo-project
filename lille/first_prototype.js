@@ -55,12 +55,10 @@ async function answer (){
           driver.quit();
       }
 
-
+      // the actual writting
+      csvWriter
+        .writeRecords(data)
+        .then(()=> console.log('The CSV file was written successfully'));
 }
 
 answer();
-
-// the actual writting
-csvWriter
-  .writeRecords(data)
-  .then(()=> console.log('The CSV file was written successfully'));
