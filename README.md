@@ -7,3 +7,5 @@ see link "https://www.selenium.dev/documentation/en/getting_started_with_webdriv
 the example in index.js uses firefox
 
 The actual file that has the prototype is first_prototype.js , and to run it you can simply do "node first_prototype.js"
+
+the following command runs the  cruurent prototype, "node second_prototype.js"
