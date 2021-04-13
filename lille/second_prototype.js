@@ -29,6 +29,33 @@ async function answer (){
         // Navigating to google
       await driver.get(address);
 
+      //get all the javascript on the page
+      var embededCalls=[];
+      const all = await driver.findElements(By.tagName("script"));
+      // loop through the scripts
+      for (info in all){
+        all[info].getAttribute("innerHTML").then(function (src) {
+            // check wether the sript includes a link or an API call
+            if(src.includes("fetch")||src.includes("get")|| src.includes("XMLHttpRequest") ){
+              // get the addresses out
+              //add the call to the link collection from this website
+              var call;
+              if(src.includes("https")){
+                call = src.match(/\bhttps?:\/\/\S+/gi);
+                embededCalls.push(call);
+              }
+              else{
+                call = src.match(/\bhttp?:\/\/\S+/gi);
+                embededCalls.push(call);
+              }
+
+            }
+
+
+        });
+
+      }
+
       //navigator.userAgent property been accessed ? and what is its content.
       var isUserAgentAccessed;
       var userAgentInfo;
@@ -83,6 +110,7 @@ async function answer (){
         "coockieEnabledStatus": coockieEnabledStatus,
         "plugins": plugins,
         "browserOnlineStatus": browserOnlineStatus,
+        "embededCalls" : embededCalls,
 
 
       }
