@@ -1,4 +1,4 @@
-# lille_technical_exam
+# Selenium and node Demo
 
 To run any file in this folder just do "node filename" and you need to remember the .js extension.
 For some files you need to download the Selenium WebDriver dirvers for different browsers and add them to your path variable
